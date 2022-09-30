@@ -11,36 +11,36 @@ import Navbar from '../components/NavBar'
 
 
 interface Props {
-  allMovies: Movie[] 
+    romanceMovies: Movie[]
 }
 
 export const getServerSideProps = async () => {
 
   const [
-    allMovies
+    romanceMovies
     
   ] = await Promise.all([
 
-    fetch(requests.fetchMovies).then((res) => res.json()),
+    fetch(requests.fetchRomanceMovies).then((res) => res.json()),
     
   ])
 
   return {
     props: {
-      allMovies: allMovies.results,
+        romanceMovies: romanceMovies.results,
       
       
     },
   }
 }
 
-export default function Home({ allMovies }: Props) {
+export default function Romance({ romanceMovies }: Props) {
   return (
     <div>
       
     <div className={styles.div}>
       <main>
-      <Layout title="" movies={allMovies}/>
+      <Layout title="" movies={romanceMovies}/>
       </main>
       
     </div>

@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 import requests from '../utils/requests'
-import logo from '../image/logo_netflix.png'
+
 import Image from 'next/image'
 import { Movie } from '../../typings'
 
@@ -10,46 +10,62 @@ import { useState, useEffect } from 'react'
 import Navbar from '../components/NavBar'
 
 
+
+
+
 interface Props {
-  allMovies: Movie[] 
+    title: string
+  getMovie: Movie[]
+  
+  
 }
 
 export const getServerSideProps = async () => {
+    
 
   const [
-    allMovies
+    getMovie
     
   ] = await Promise.all([
 
-    fetch(requests.fetchMovies).then((res) => res.json()),
-    
+    fetch(requests.fetchMovie).then((res) => res.json()),
   ])
 
   return {
     props: {
-      allMovies: allMovies.results,
+        getMovie: getMovie.results,
       
       
     },
   }
 }
 
-export default function Home({ allMovies }: Props) {
+export default function Search({ getMovie, title }) {
+   
+  
   return (
-    <div>
-      
+    
     <div className={styles.div}>
+      
+      <div className={styles.div}>
       <main>
-      <Layout title="" movies={allMovies}/>
+      <Layout title="" movies={getMovie}/>
       </main>
       
     </div>
-    
+      
     </div>
-    
-    
-    
-    
+
   )
-   
+    
+      
+    
+  
 }
+      
+      
+   
+    
+    
+    
+ 

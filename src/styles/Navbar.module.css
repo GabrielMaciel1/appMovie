@@ -5,9 +5,9 @@
     padding: 1em 1.2em;
     
     background-color: black;
-    
+    border-bottom: 2px solid #B224ED;
     color: #fff;
-    opacity: 100%;
+    
     
   }
   
@@ -42,8 +42,10 @@
   }
   
   .link_items a:hover {
-    border-color: #fff;
+    border-color: #B224ED;
   }
+
+  
 
   
   

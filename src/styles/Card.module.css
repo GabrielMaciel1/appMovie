@@ -1,46 +1,74 @@
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2em 1em;
-    margin-bottom: 2em;
-    width: 23%;
-    border-radius: 1em;
-    border: 2px solid #e33d33;
-    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
-    background-color: #333;
-    color: #fff;
-  }
+.container{
+  width: 30%;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #B224ED ;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+
+.container .title {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   
-  .card .id {
-    margin: 1em 0;
-    background-color: #e33d33;
-    border-radius: 5px;
-    padding: 5px;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card .title {
-    text-transform: capitalize;
-    margin-bottom: 1em;
-    font-size: 1.4em;
-  }
-  
-  .card .btn {
-    text-decoration: none;
-    background-color: #fff;
-    color: #222;
-    padding: 0.7em 1.2em;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.4s;
-  }
-  
-  .card .btn:hover {
-    background-color: #e33d33;
-    color: #fff;
-  }
+}
+
+.movies-container div {
+  width: 30%;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 1rem;
+}
+
+.movies-container div img {
+  max-width: 100%;
+}
+
+.movies-container div img,
+.movies-container div p {
+  margin-bottom: 1rem;
+}
+
+.movies-container div h2 {
+  margin-bottom: 1.5rem;
+}
+
+.movies-container div svg {
+  color: #f7d354;
+}
+
+.movies-container div a {
+  background-color: #f7d354;
+  border: 2px solid #f7d354;
+  border-radius: 4px;
+  color: #000;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.movies-container div a:hover {
+  background-color: transparent;
+  color: #f7d354;
+}

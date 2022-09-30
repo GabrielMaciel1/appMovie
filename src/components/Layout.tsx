@@ -1,10 +1,13 @@
 import styles from '../styles/Layout.module.css'
 import Card from './Card'
-import Navbar from './NavBar'
-import Footer from './Footer'
+import Search from './Search'
 import Image from 'next/image'
 import Head from 'next/head'
+import Navbar from '../components/NavBar'
 import { Movie } from '../../typings'
+import logo from '../image/logo.png'
+import {} from 'react-bootstrap'
+import { useState } from "react";
 
 interface Props {
   title: string
@@ -13,6 +16,7 @@ interface Props {
 
 export default function Layout({ title , movies }: Props) {
 
+ 
 
   return (
     <>
@@ -22,14 +26,30 @@ export default function Layout({ title , movies }: Props) {
       </Head>
       
       <main className="main-container">
-       
-        <input type="text" placeholder="Procurar" className={styles.input}/>
+
+      <Navbar/>
+      
+      <div >
+        <div className= {styles.logo}>
+        <Image
+        src={logo}
+        
+        height= '300px'
+        width= '300px'
+        
+        />
+        </div>
+      <Search/>
+           
+      </div>
+        
         <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>
-        <div>
+        <div className={styles.div}>
+
         {movies.map((movie) => (
-            <Card key={movie.id} movie={movie} />
+            <Card title = {movie.title} key={movie.id} movie={movie} />
           ))}
         
         </div>
